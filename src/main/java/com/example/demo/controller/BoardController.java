@@ -53,4 +53,12 @@ public class BoardController {
 		mv.addObject("list", list);
 		return mv;
 	}
+	@RequestMapping("/board-list")
+	public ModelAndView findBoardList() throws Exception {
+		log.info("========================== BoardController(/board-list) ==================================");
+		List<BoardDTO> list=boardService.findBoardList();
+		ModelAndView mv=new ModelAndView("/boardList");
+		mv.addObject("list", list);
+		return mv;
+	}
 }
